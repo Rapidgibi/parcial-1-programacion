@@ -1,5 +1,9 @@
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 const express = require('express');
+const YAML = require('yaml');
+const swaggerUi = require('swagger-ui-express');
 const pool = require('./src/models/db');
 const app = express();
 
@@ -15,9 +19,11 @@ app.get('/api/salud', async (req, res, next) => {
   }
 });
 
-// Aquí activaremos las rutas en los próximos pasos
-// app.use('/api/v1/productos', require('./src/routes/productos'));
-// app.use('/api/v1/pedidos', require('./src/routes/pedidos'));
+app.use('/api/v1/productos', require('./src/routes/productos'));
+app.use('/api/v1/pedidos', require('./src/routes/pedidos'));
+
+const openapi = YAML.parse(fs.readFileSync(path.join(__dirname, 'docs', 'openapi.yaml'), 'utf8'));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openapi));
 
 app.use((req, res) => res.status(404).json({ error: 'RUTA_NO_ENCONTRADA' }));
 app.use(require('./src/middlewares/errores'));
