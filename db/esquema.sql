@@ -1,0 +1,2 @@
+-- Pega aquí el SQL que utilizaste en phpMyAdmin para crear la base de datos tienda.
+-- No se incluyó el SQL original en las instrucciones recibidas.
