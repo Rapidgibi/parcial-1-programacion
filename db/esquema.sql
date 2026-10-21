@@ -1,16 +1,15 @@
 -- 1. Base de datos
-CREATE DATABASE IF NOT EXISTS tienda
+CREATE DATABASE IF NOT EXISTS parcial1_gibrham
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE tienda;
+USE parcial1_gibrham;
 
 -- 2. Usuario de la aplicación con permisos mínimos
 -- Reemplaza el marcador por una clave segura y configura la misma en .env.
-CREATE USER IF NOT EXISTS 'tienda_app'@'localhost' IDENTIFIED BY 'CAMBIA_ESTA_CLAVE_SEGURA';
-CREATE USER IF NOT EXISTS 'tienda_app'@'127.0.0.1' IDENTIFIED BY 'CAMBIA_ESTA_CLAVE_SEGURA';
-GRANT SELECT, INSERT, UPDATE ON tienda.* TO 'tienda_app'@'localhost';
-GRANT SELECT, INSERT, UPDATE ON tienda.* TO 'tienda_app'@'127.0.0.1';
-
+CREATE USER IF NOT EXISTS 'parcial1_gibrham'@'localhost' IDENTIFIED BY 'CLAVE_SEGURA';
+CREATE USER IF NOT EXISTS 'parcial1_gibrham'@'127.0.0.1' IDENTIFIED BY 'CLAVE_SEGURA';
+GRANT SELECT, INSERT, UPDATE ON parcial1_gibrham.* TO 'parcial1_gibrham'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON parcial1_gibrham.* TO 'parcial1_gibrham'@'127.0.0.1';
 -- 3. Tablas
 CREATE TABLE categorias (
   id INT AUTO_INCREMENT PRIMARY KEY,

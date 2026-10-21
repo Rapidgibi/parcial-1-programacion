@@ -21,7 +21,7 @@
 | 6 | POST /api/v1/pedidos | `"producto_id": 9999` | 422 | 422 |
 | 7 | POST /api/v1/pedidos | Producto 1 (cant 1) y producto 9 (cant 50) | 422 | 422 |
 | 8 | GET /api/v1/productos/1 | El stock no cambió tras la prueba 7 | 200 | 200 OK |
-| 9 | GET /api/v1/pedidos?estado=pendiente | Incluye el pedido de la prueba 1 | 200 | 200 |
+| 9 | GET /api/v1/pedidos?estado=pagado | Incluye el pedido de la prueba 1 | 200 | 200 |
 | 10 | GET /api/v1/pedidos/9999 | Pedido inexistente | 404 | 404 |
 | 11 | PATCH /api/v1/pedidos/1 | `{ "estado": "pagado" }` | 200 | 200 |
 | 12 | PATCH /api/v1/pedidos/1 | `{ "estado": "perdido" }` | 400 | 400 |
