@@ -1,6 +1,6 @@
-openapi: 3.0.3
+﻿openapi: 3.0.3
 info:
-  title: TiendaAPI
+  title: Parcial 1 - Programación
   version: 1.0.0
   description: API de la tienda en línea del curso INF 323
 servers:
@@ -246,3 +246,4 @@ components:
           type: string
           enum: [pendiente, pagado, enviado, cancelado]
           example: pagado
+
