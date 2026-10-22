@@ -51,3 +51,21 @@ Utilizariamos el código 422 porque el pedido contiene un producto inexistente y
 12. ¿Por que pedido_items guarda precio_unitario si el precio ya está en productos?
 
 Se guarda el precio unitario para conservar el valor que tenia el producto cuando se realizo la compra. Si posteriormente aumenta o disminuye su precio, los pedidos anteriores mantendran el importe original, permitiendo consultar correctamente el historial de ventas.
+
+## Autoevaluacion
+
+**1. ¿Que paso les tomo mas tiempo y como lo resolvieron?**
+
+El paso que mas tiempo me tomo fue la configuracion de la base de datos y su conexion con la API. Tuve problemas con los permisos del usuario de MySQL y con la ubicacion de las tablas. Lo resolvi revisando la configuracion en XAMPP y phpMyAdmin hasta lograr que el servidor se conectara correctamente.
+
+**2. Expliquen con sus palabras que habria pasado en la prueba 8 sin la transaccion.**
+
+Sin la transaccion, cuando un pedido tuviera un producto sin suficiente stock, el sistema podria haber descontado las cantidades de otros productos antes de detectar el problema. Esto dejaria el inventario incorrecto aunque el pedido fuera rechazado. La transaccion permite cancelar todos los cambios si ocurre un error.
+
+**3. Cada integrante escribe dos lineas sobre el aporte del otro.**
+
+Realice el desarrollo y las pruebas del parcial de manera individual, por lo que no tuve otro integrante al cual evaluar. Me encargue de revisar la base de datos, comprobar los endpoints, realizar las pruebas y organizar la documentacion del proyecto.
+
+**4. ¿Que nota se pondrian segun la rubrica? Justifiquen en dos lineas.**
+
+Me pondria una nota de 95 sobre 100, porque logre configurar la base de datos, comprobar las principales operaciones de la API y preparar la documentacion solicitada. Sin embargo, reconozco que quedaron algunas pruebas.
